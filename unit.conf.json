@@ -1,0 +1,68 @@
+{
+  "listeners": {
+    "*:80": {
+      "pass": "routes"
+    }
+  },
+  "routes": [
+    {
+      "match": {
+        "host": "localhost",
+        "uri": [
+          "/environments/*"
+        ]
+      },
+      "action": {
+        "share": [
+          "/data/environments/development/"
+        ],
+        "index": "config.json"
+      }
+    },
+    {
+      "match": {
+        "host": "prelive.nginxweather.com",
+        "uri": [
+          "/environments/*"
+        ]
+      },
+      "action": {
+        "share": [
+          "/data/environments/staging/"
+        ],
+        "index": "config.json"
+      }
+    },
+    {
+      "match": {
+        "host": "nginxweather.com",
+        "uri": [
+          "/environments/*"
+        ]
+      },
+      "action": {
+        "share": [
+          "/data/environments/production/"
+        ],
+        "index": "config.json"
+      }
+    },
+    {
+      "match": {
+        "uri": "/api/*"
+      },
+      "action": {
+        "return": 501
+      }
+    },
+    {
+      "action": {
+        "share": [
+          "/data/build$uri",
+          "/data/build/index.html"
+        ]
+      }
+    }
+  ],
+  "applications": {}
+}

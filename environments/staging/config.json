@@ -1,0 +1,5 @@
+{
+  "weatherApi": {
+    "hostname": "http://pre.nginxweather.com/api"
+  }
+}

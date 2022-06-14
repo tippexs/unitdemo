@@ -1,0 +1,8 @@
+GET http://192.168.220.128:9999/config
+Accept: application/json
+###
+
+PUT http://192.168.220.128:9999/config/applications/unit-weather
+Content-Type: application/json
+
+< unit.conf.json

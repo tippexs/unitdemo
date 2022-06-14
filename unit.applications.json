@@ -1,0 +1,79 @@
+{
+  "listeners": {
+    "*:80": {
+      "pass": "routes"
+    }
+  },
+  "routes": [
+    {
+      "match": {
+        "host": "172.17.0.2",
+        "uri": [
+          "/environments/*"
+        ]
+      },
+      "action": {
+        "share": [
+          "/data/environments/development/"
+        ],
+        "index": "config.json"
+      }
+    },
+    {
+      "match": {
+        "host": "prelive.nginxweather.com",
+        "uri": [
+          "/environments/*"
+        ]
+      },
+      "action": {
+        "share": [
+          "/data/environments/staging/"
+        ],
+        "index": "config.json"
+      }
+    },
+    {
+      "match": {
+        "host": "nginxweather.com",
+        "uri": [
+          "/environments/*"
+        ]
+      },
+      "action": {
+        "share": [
+          "/data/environments/production/"
+        ],
+        "index": "config.json"
+      }
+    },
+    {
+      "match": {
+        "uri": "/api/*"
+      },
+      "action": {
+        "pass": "applications/unit-weather"
+      }
+    },
+    {
+      "action": {
+        "share": [
+          "/data/build$uri",
+          "/data/build/index.html"
+        ]
+      }
+    }
+  ],
+  "applications": {
+    "unit-weather": {
+      "type": "python 3.10",
+      "path": "/data/api/",
+      "home": "/data/api/venv/",
+      "callable": "app",
+      "module": "wsgi",
+      "environment": {
+        "V": "0.0.1"
+      }
+    }
+  }
+}

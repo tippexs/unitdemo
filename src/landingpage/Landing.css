@@ -1,0 +1,23 @@
+.lp-hero {
+    background-image: url("/public/background.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    padding-left: 2rem;
+}
+
+.lp-hero-404 {
+    background-image: url("/public/404.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    padding-left: 2rem;
+}

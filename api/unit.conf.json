@@ -1,0 +1,8 @@
+{
+  "type": "python 3.10",
+  "path": "/data/api/",
+  "home": "/data/api/venv/",
+  "callable": "app",
+  "module": "wsgi",
+  "environment": {"V": "0.0.1"}
+}

@@ -7,13 +7,8 @@ import PropTypes from "prop-types";
 
 function Copyright() {
     return (
-        <Typography variant="body2" color="text.secondary">
-            {'Build with <3 by'}
-            <Link color="inherit" href="https://mui.com/">
-
-            </Link>{'the NGINX Unit Team '}
-            {new Date().getFullYear()}
-            {'.'}
+        <Typography variant="body2">
+            Build with &#10084;&#65039; by the NGINX Unit Team {new Date().getFullYear()}
         </Typography>
     );
 }
@@ -26,6 +21,10 @@ function Footer(props) {
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '20vh',
+                position: 'fixed',
+                width: '100%',
+                bottom: '0',
+                color: 'white'
             }}
         >
             <Box
@@ -35,10 +34,13 @@ function Footer(props) {
                     px: 2,
                     mt: 'auto',
                     backgroundColor: '#024059',
-                    color: 'white'
+
                 }}
             >
-                <Container maxWidth="sm">
+                <Container maxWidth="sm" sx={{
+                    display: 'flex',
+                    flexDirection: 'row'
+                }}>
                     <Copyright/>
                     {sections.map((section) => (
                         <Link
@@ -47,7 +49,7 @@ function Footer(props) {
                             key={section.title}
                             variant="body2"
                             href={section.url}
-                            sx={{ p: 1, flexShrink: 0 }}
+                            sx={{paddingLeft: '0.5rem'}}
                         >
                             {section.title}
                         </Link>

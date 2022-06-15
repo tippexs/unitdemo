@@ -1,6 +1,6 @@
 .lp-hero {
     background-image: url("/public/background.jpg");
-    background-position: top;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;

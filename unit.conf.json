@@ -7,7 +7,7 @@
   "routes": [
     {
       "match": {
-        "host": "localhost",
+        "host": "localhost*",
         "uri": [
           "/environments/*"
         ]

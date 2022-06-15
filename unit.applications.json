@@ -49,7 +49,7 @@
     },
     {
       "match": {
-        "uri": "/api/*"
+        "uri": "/api/v1/*"
       },
       "action": {
         "pass": "applications/unit-weather"

@@ -1,0 +1,12 @@
+{
+    "type": "python 3.9",
+    "path": "/home/user/workspace/techsummit2022/unitdemo/api/",
+    "home": "/home/user/workspace/techsummit2022/unitdemo/api/venv/",
+    "callable": "app",
+    "module": "wsgi",
+    "user": "user",
+    "group": "user",
+    "environment": {
+      "APP_VERSION": "0.0.01"
+    }
+}
